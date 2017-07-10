@@ -1,0 +1,78 @@
+header {
+  height: 650px;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(https://boygeniusreport.files.wordpress.com/2015/01/new-york-night.jpg?quality=98&strip=all);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  position: relative;
+}
+
+#home-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(6, 28, 66, 0.8);
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: rgba(226, 226, 227, 1);
+}
+
+#general-nav {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  height: 49px;
+  padding: 0;
+  background-color: rgba(111, 129, 160, 0.8);
+  margin-left: 112px;
+}
+
+#about-nav {
+  margin-left: 15px;
+}
+
+#about {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding-top: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: rgba(226, 226, 227, 1);
+}
+
+.font-style {
+  color: rgba(226, 226, 227, 1);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+#title {
+  margin-top: 15%;
+}
+
+#hr-container {
+  margin-left: 40%;
+  width: 20%;
+}
+
+#search-bar {
+  width: 27%;
+  margin-left: 37%;
+  margin-top: 3%;
+}
+
+.icon {
+  color: rgba(226, 226, 227, 1);
+}

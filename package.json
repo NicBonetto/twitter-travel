@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/NicBonetto/twitter-travel/issues"
   },
-  "homepage": "https://github.com/NicBonetto/twitter-travel#readme"
+  "homepage": "https://github.com/NicBonetto/twitter-travel#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }

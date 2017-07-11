@@ -13,7 +13,7 @@ header {
   position: relative;
 }
 
-#home-nav {
+.home-nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,25 +24,25 @@ header {
   padding-right: 15px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  color: rgba(226, 226, 227, 1);
+  color: rgba(226, 226, 227, 0.8);
 }
 
-#general-nav {
+.general-nav {
   position: relative;
   display: inline-block;
   list-style: none;
-  width: 100%;
+  width: 91%;
   height: 49px;
   padding: 0;
   background-color: rgba(111, 129, 160, 0.8);
   margin-left: 112px;
 }
 
-#about-nav {
+.about-nav {
   margin-left: 15px;
 }
 
-#about {
+.about {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -62,7 +62,7 @@ header {
   margin-top: 15%;
 }
 
-#hr-container {
+.hr-container {
   margin-left: 40%;
   width: 20%;
 }
@@ -75,4 +75,48 @@ header {
 
 .icon {
   color: rgba(226, 226, 227, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+#about-page {
+  height: 550px;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(https://packages.qantas.com/uploads/featurepage/51/998x484-crop-new-zealand.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  position: relative;
+}
+
+#about-container {
+  width: 75%;
+  padding-left: 25%;
+}
+
+#about-footer {
+  height: 300px;
+  background-image: url(https://814824ac51e64b4abcaa-cffb1f8b6941251295ee20eefbd7d321.ssl.cf2.rackcdn.com/images/pgmisc/story-portrait-layout-background.jpg);
+}
+
+#footer-text {
+  margin-top: 1%;
+  color: rgba(132, 136, 137, 1);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.logo-container {
+  margin-top: 7%;
+}
+
+.logo {
+  max-width: 75%;
 }

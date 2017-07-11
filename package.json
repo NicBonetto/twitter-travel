@@ -2,7 +2,7 @@
   "name": "twitter-travel",
   "version": "1.0.0",
   "description": "A website for adventurers who want to travel with Twitter's recommendations.",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,5 +1,5 @@
 header {
-  height: 650px;
+  height: 100vh;
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.3),
@@ -7,10 +7,6 @@ header {
     ),
     url(https://boygeniusreport.files.wordpress.com/2015/01/new-york-night.jpg?quality=98&strip=all);
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
-  position: relative;
 }
 
 .home-nav {

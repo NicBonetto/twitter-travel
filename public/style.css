@@ -7,6 +7,10 @@ header {
     ),
     url(https://boygeniusreport.files.wordpress.com/2015/01/new-york-night.jpg?quality=98&strip=all);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  position: relative;
 }
 
 .home-nav {
@@ -36,12 +40,24 @@ header {
 
 .about-nav {
   margin-left: 15px;
+  display: inline-block;
 }
 
 .about {
   display: inline-block;
-  width: 100%;
-  height: 100%;
+  padding-top: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: rgba(226, 226, 227, 1);
+}
+
+.map-nav {
+  display: inline-block;
+}
+
+.map {
+  display: inline-block;
+  padding-left: 13px;
   padding-top: 14px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -63,7 +79,7 @@ header {
   width: 20%;
 }
 
-#search-bar {
+#search-container {
   width: 27%;
   margin-left: 37%;
   margin-top: 3%;
@@ -115,4 +131,9 @@ header {
 
 .logo {
   max-width: 75%;
+}
+
+#map {
+  height: 100vh;
+  width: 80vh;
 }

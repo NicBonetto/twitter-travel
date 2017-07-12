@@ -9,40 +9,44 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <header id="#home" class="container-fluid view">
-      <div class="row">
-        <nav class="col-sm-12">
-          <a href="#home" class="home-nav">twitterTravel</a>
-        </nav>
-        <ul class="general-nav">
-          <li class="about-nav">
-            <a href="#about" class="about">About</a>
-          </li>
-          <li class="map-nav">
-            <a href="#map" class="map">Map</a>
-          </li>
-        </ul>
-      </div>
-      <div class="row">
-        <h3 class="font-style text-center" id="title">twitterTravel</h3>
-      </div>
-      <div class="row hr-container">
-        <hr/>
-      </div>
-      <div class="row">
-        <p class="font-style text-center">Explore with Twitter</p>
-      </div>
-      <div class="row">
-        <h1 class="font-style text-center">Choose Your Destination</h1>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 form-group text-center" id="search-container">
-          <form class="form-inline">
-            <input type="text" class="form-control controls" id="pac-input" placeholder="Search Box"/>
-            <span class="glyphicon glyphicon-search icon"></span>
-          </form>
+    <header id="#home" class="view">
+      <div id="main-page" class="container-fluid">
+        <div class="row">
+          <nav class="col-sm-12">
+            <a href="#home" class="home-nav">twitterTravel</a>
+          </nav>
+          <ul class="general-nav">
+            <li class="about-nav">
+              <a href="#about" class="about">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3 class="font-style text-center" id="title">twitterTravel</h3>
+        </div>
+        <div class="row hr-container">
+          <hr/>
+        </div>
+        <div class="row">
+          <p class="font-style text-center">Explore with Twitter</p>
+        </div>
+        <div class="row">
+          <h1 class="font-style text-center">Choose Your Destination</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 form-group text-center" id="search-container">
+            <form class="form-inline">
+              <input type="text" class="form-control controls" id="pac-input" placeholder="Location"/>
+              <span class="glyphicon glyphicon-search icon"></span>
+            </form>
+          </div>
         </div>
       </div>
+      <section id="#map">
+        <div id="map-page" class="container-fluid">
+          <div id="map"></div>
+        </div>
+      </section>
     </header>
     <section class="hidden view" id="#about">
       <div class="container-fluid" id="about-page">
@@ -53,9 +57,6 @@
           <ul class="general-nav">
             <li class="about-nav">
               <a href="#about" class="about">About</a>
-            </li>
-            <li class="map-nav">
-              <a href="#map" class="map">Map</a>
             </li>
           </ul>
         </div>
@@ -93,22 +94,6 @@
           </div>
         </div>
       </footer>
-    </section>
-    <section id="#map" class="view container-fluid">
-      <div class="row">
-        <nav class="col-sm-12">
-          <a href="#home" class="home-nav">twitterTravel</a>
-        </nav>
-        <ul class="general-nav">
-          <li class="about-nav">
-            <a href="#about" class="about">About</a>
-          </li>
-          <li class="map-nav">
-            <a href="#map" class="map">Map</a>
-          </li>
-        </ul>
-      </div>
-      <div id="map"></div>
     </section>
     <script src="google-maps.js"></script>
     <script src="main.js"></script>

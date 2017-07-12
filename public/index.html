@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8"/>
+    <title>twitterTravel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <header id="#home" class="view">
+      <div id="main-page" class="container-fluid">
+        <div class="row">
+          <nav class="col-sm-12">
+            <a href="#home" class="home-nav">twitterTravel</a>
+          </nav>
+          <ul class="general-nav">
+            <li class="about-nav">
+              <a href="#about" class="about">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3 class="font-style text-center" id="title">twitterTravel</h3>
+        </div>
+        <div class="row hr-container">
+          <hr/>
+        </div>
+        <div class="row">
+          <p class="font-style text-center">Explore with Twitter</p>
+        </div>
+        <div class="row">
+          <h1 class="font-style text-center">Choose Your Destination</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 form-group text-center" id="search-container">
+            <form class="form-inline">
+              <input type="text" class="form-control controls" id="pac-input" placeholder="Location"/>
+              <span class="glyphicon glyphicon-search icon"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+      <section id="#map">
+        <div id="map-page" class="container-fluid">
+          <div id="map"></div>
+        </div>
+      </section>
+    </header>
+    <section class="hidden view" id="#about">
+      <div class="container-fluid" id="about-page">
+        <div class="row">
+          <nav class="col-sm-12">
+            <a href="#home" class="home-nav">twitterTravel</a>
+          </nav>
+          <ul class="general-nav">
+            <li class="about-nav">
+              <a href="#about" class="about">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <h2 class="font-style text-center">What We Do</h2>
+        </div>
+        <div class="row hr-container">
+          <hr/>
+        </div>
+        <div class="row">
+          <div class="text-center" id="about-container">
+            <p class="font-style">Check out your next adventure with Twitter's recommendations!
+             Search for a specific location, and get real-time tweets about people's
+           experience there. See the exact location with Google Maps, and the trending
+           sentiment for that spot.</p>
+          </div>
+        </div>
+      </div>
+      <footer class="container-fluid" id="about-footer">
+        <div class="row" id="footer-text">
+          <h5 class="text-center">twitterTravel was made with:</h5>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 logo-container">
+            <img class="logo" src="https://3.bp.blogspot.com/-_OfUzB5cZYc/VfsuVYmDcSI/AAAAAAAAD2Q/7cPrm2_UUbg/s1600/bootstrap2_logo.png"/>
+          </div>
+          <div class="col-sm-3 logo-container">
+            <img class="logo" src="https://pbs.twimg.com/media/CN1Vv8WUcAAeUq4.png"/>
+          </div>
+          <div class="col-sm-3 logo-container">
+            <img class="logo" src="https://raw.githubusercontent.com/geduldig/TwitterAPI/master/logo.png"/>
+          </div>
+          <div class="col-sm-3 logo-container">
+            <img class="logo" src="https://cdn.worldvectorlogo.com/logos/microsoft-azure-2.svg"/>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="google-maps.js"></script>
+    <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvhXdrBJDKx8URSdBIWSOKKEuVopGj9nI&libraries=places&callback=initAutocomplete"></script>
+  </body>
+</html>

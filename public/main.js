@@ -77,17 +77,4 @@ function renderTwitterElements(response) {
   return $tweetList
 }
 
-$mapPage.addEventListener('mouseenter', () => {
-  let fetchItem = searchParser($searchItem)
-  $twitterContainer.innerHTML = ''
-
-  fetch('http://localhost:3000/tweets/' + fetchItem)
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      $twitterContainer.appendChild(renderTwitterElements(data.statuses))
-    })
-})
-
 router.listen()

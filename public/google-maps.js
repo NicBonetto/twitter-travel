@@ -1,3 +1,5 @@
+let searchBox
+
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'),
   {
@@ -8,7 +10,7 @@ function initAutocomplete() {
 
   // Create the search box and link it to the UI element.
   let input = document.getElementById('pac-input')
-  let searchBox = new google.maps.places.SearchBox(input)
+   searchBox = new google.maps.places.SearchBox(input)
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -63,5 +65,17 @@ function initAutocomplete() {
       }
     })
     map.fitBounds(bounds)
+  })
+  searchBox.addListener('places_changed', () => {
+    let fetchItem = searchParser($searchItem)
+    $twitterContainer.innerHTML = ''
+
+    fetch('http://localhost:3000/tweets/' + fetchItem)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        $twitterContainer.appendChild(renderTwitterElements(data.statuses))
+      })
   })
 }

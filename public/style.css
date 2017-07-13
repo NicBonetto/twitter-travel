@@ -52,10 +52,6 @@
   color: rgba(226, 226, 227, 1);
 }
 
-.map-nav {
-  display: inline-block;
-}
-
 .map {
   display: inline-block;
   padding-left: 13px;
@@ -151,6 +147,8 @@
   background-color: rgba(111, 129, 160, 0.5);
   margin-top: 2%;
   margin-left: 10%;
+  border: solid rgba(226, 226, 227, 0.2);
+  border-width: 1px;
   overflow: auto;
 }
 

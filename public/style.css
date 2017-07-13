@@ -19,6 +19,7 @@
   left: 0;
   background-color: rgba(6, 28, 66, 0.8);
   height: 50px;
+  width: 10%;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -31,11 +32,11 @@
   position: relative;
   display: inline-block;
   list-style: none;
-  width: 91%;
+  width: 90%;
   height: 49px;
   padding: 0;
   background-color: rgba(111, 129, 160, 0.8);
-  margin-left: 112px;
+  margin-left: 10%;
 }
 
 .about-nav {

@@ -1,3 +1,7 @@
+const $views = document.querySelectorAll('.view')
+const $mapPage = document.querySelector('#map-page')
+const $searchItem = document.querySelector('#pac-input')
+
 class HashRouter {
   constructor($views) {
     this.isListening = false
@@ -20,7 +24,22 @@ class HashRouter {
   }
 }
 
-const $views = document.querySelectorAll('.view')
 const router = new HashRouter($views)
+
+function searchParser(item) {
+  let searchString = item.value
+
+  let splitString = searchString.split(',')
+  splitString.splice(1, 100)
+  let newString = splitString.toString().split(' ')
+  let sendString = newString.reduce((total, element) => {
+    return total + element
+  })
+  return sendString
+}
+
+$mapPage.addEventListener('mouseenter', () => {
+  let fetchItem = searchParser($searchItem)
+})
 
 router.listen()

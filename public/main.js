@@ -40,6 +40,7 @@ function searchParser(item) {
 
 $mapPage.addEventListener('mouseenter', () => {
   let fetchItem = searchParser($searchItem)
+  fetch('http://localhost:3000/tweets/' + fetchItem)
 })
 
 router.listen()

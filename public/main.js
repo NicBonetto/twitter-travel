@@ -1,5 +1,4 @@
 const $views = document.querySelectorAll('.view')
-const $mapPage = document.querySelector('#map-page')
 const $searchItem = document.querySelector('#pac-input')
 const $twitterContainer = document.querySelector('.twitter-container')
 

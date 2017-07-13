@@ -94,7 +94,7 @@
 }
 
 #about-page {
-  height: 550px;
+  height: 95vh;
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.3),
@@ -135,13 +135,39 @@
 
 #map {
   height: 98vh;
-  width: 80vh;
   border: solid rgba(226, 226, 227, 0.9);
   border-width: 1px;
-  margin-top: 1%;
+  margin-top: 4%;
 }
 
 #map-page {
-  height: 650px;
+  height: 100vh;
   background-image: url(http://geology.com/world/world-map-of-cities-at-night-lg.jpg);
+}
+
+.twitter-container {
+  height: 98vh;
+  background-color: rgba(111, 129, 160, 0.5);
+  margin-top: 2%;
+  margin-left: 10%;
+  overflow: auto;
+}
+
+.media {
+  background-color: rgba(226, 226, 227, 1);
+  box-shadow: 5px 2px 2px rgba(0, 7, 19, 0.3);
+  margin-bottom: -1%;
+  padding: 5px;
+}
+
+.media-object {
+  border-radius: 50%;
+}
+
+.media-body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.media-heading {
+  font-weight: 700;
 }

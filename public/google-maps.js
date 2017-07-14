@@ -75,5 +75,9 @@ function initAutocomplete() {
       .then(data => {
         $twitterContainer.appendChild(renderTwitterElements(data.statuses))
       })
+      .then( () => {
+        createChart(positive, negative, neutral)
+      })
+
   })
 }

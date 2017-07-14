@@ -54,16 +54,19 @@ function renderTwitterElements(response) {
       $sentiment.classList.add('glyphicon')
       $sentiment.classList.add('glyphicon-triangle-top')
       $sentiment.classList.add('pull-right')
+      positive++
     }
     else if(element.userSentiment === 'negative') {
       $sentiment.classList.add('glyphicon')
       $sentiment.classList.add('glyphicon-triangle-bottom')
       $sentiment.classList.add('pull-right')
+      negative++
     }
     else {
       $sentiment.classList.add('glyphicon')
       $sentiment.classList.add('glyphicon-stop')
       $sentiment.classList.add('pull-right')
+      neutral++
     }
 
     for (const property in element) {

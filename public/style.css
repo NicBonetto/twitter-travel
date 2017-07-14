@@ -131,7 +131,7 @@
 }
 
 #map {
-  height: 94vh;
+  height: 50vh;
   border: solid rgba(226, 226, 227, 0.9);
   border-width: 1px;
   margin-top: 4%;
@@ -184,4 +184,10 @@
 .glyphicon-stop {
   color: rgba(170, 145, 57, 1);
   display: inline;
+}
+
+#chart {
+  height: 45vh;
+  margin-top: 2%;
+  background-color: rgba(226, 226, 227, 1);
 }

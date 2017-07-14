@@ -1,7 +1,5 @@
-let searchBox
-
 function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'),
+  const map = new google.maps.Map(document.getElementById('map'),
   {
     center: {lat: -33.8688, lng: 151.2195},
     zoom: 13,
@@ -9,8 +7,8 @@ function initAutocomplete() {
   })
 
   // Create the search box and link it to the UI element.
-  let input = document.getElementById('pac-input')
-   searchBox = new google.maps.places.SearchBox(input)
+  const input = document.getElementById('pac-input')
+   const searchBox = new google.maps.places.SearchBox(input)
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -21,7 +19,7 @@ function initAutocomplete() {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', function() {
-    let places = searchBox.getPlaces()
+    const places = searchBox.getPlaces()
 
     if (places.length == 0) {
       return
@@ -34,14 +32,14 @@ function initAutocomplete() {
     markers = []
 
     // For each place, get the icon, name and location.
-    let bounds = new google.maps.LatLngBounds()
+    const bounds = new google.maps.LatLngBounds()
     places.forEach(function(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry")
         return
       }
 
-      let icon = {
+      const icon = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
@@ -67,10 +65,10 @@ function initAutocomplete() {
     map.fitBounds(bounds)
   })
   searchBox.addListener('places_changed', () => {
-    let fetchItem = searchParser($searchItem)
+    const fetchItem = searchParser($searchItem)
     $twitterContainer.innerHTML = ''
 
-    fetch('http://localhost:3000/tweets/' + fetchItem)
+    fetch('/tweets/' + fetchItem)
       .then(response => {
         return response.json()
       })

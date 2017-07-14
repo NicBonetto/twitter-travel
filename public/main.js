@@ -27,7 +27,7 @@ class HashRouter {
 const router = new HashRouter($views)
 
 function searchParser(item) {
-  let searchString = item.value
+  const searchString = item.value
 
   let splitString = searchString.split(',')
   splitString.splice(1, 100)

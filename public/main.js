@@ -48,12 +48,30 @@ function renderTwitterElements(response) {
     const $name = document.createElement('h5')
     const $text = document.createElement('p')
     const $mediaBody = document.createElement('div')
+    const $sentiment = document.createElement('div')
+
+    if (element.userSentiment === 'positive') {
+      $sentiment.classList.add('glyphicon')
+      $sentiment.classList.add('glyphicon-triangle-top')
+      $sentiment.classList.add('pull-right')
+    }
+    else if(element.userSentiment === 'negative') {
+      $sentiment.classList.add('glyphicon')
+      $sentiment.classList.add('glyphicon-triangle-bottom')
+      $sentiment.classList.add('pull-right')
+    }
+    else {
+      $sentiment.classList.add('glyphicon')
+      $sentiment.classList.add('glyphicon-stop')
+      $sentiment.classList.add('pull-right')
+    }
 
     for (const property in element) {
       if (property === 'text') {
         $text.textContent =  element[property]
       }
-      else if (property === 'user') {
+
+      if (property === 'user') {
         $name.textContent = element[property].name
         $img.src = element[property].profile_image_url
       }
@@ -66,6 +84,7 @@ function renderTwitterElements(response) {
     $mediaBody.classList.add('media-body')
 
     $mediaImg.appendChild($img)
+    $mediaBody.appendChild($sentiment)
     $mediaBody.appendChild($name)
     $mediaBody.appendChild($text)
     $tweetLi.appendChild($mediaImg)

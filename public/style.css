@@ -170,3 +170,18 @@
 .media-heading {
   font-weight: 700;
 }
+
+.glyphicon-triangle-top {
+  color: rgba(36, 107, 97, 1);
+  display: inline;
+}
+
+.glyphicon-triangle-bottom {
+  color: rgba(170, 57, 57, 1);
+  display: inline;
+}
+
+.glyphicon-stop {
+  color: rgba(170, 145, 57, 1);
+  display: inline;
+}

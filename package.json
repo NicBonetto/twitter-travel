@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/NicBonetto/twitter-travel#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "twit": "^2.2.9"
   }
 }

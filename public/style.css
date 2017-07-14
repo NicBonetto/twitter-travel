@@ -131,7 +131,7 @@
 }
 
 #map {
-  height: 98vh;
+  height: 94vh;
   border: solid rgba(226, 226, 227, 0.9);
   border-width: 1px;
   margin-top: 4%;
@@ -143,7 +143,7 @@
 }
 
 .twitter-container {
-  height: 98vh;
+  height: 94vh;
   background-color: rgba(111, 129, 160, 0.5);
   margin-top: 2%;
   margin-left: 10%;

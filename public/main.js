@@ -1,7 +1,9 @@
+//Declare variables
 const $views = document.querySelectorAll('.view')
 const $searchItem = document.querySelector('#pac-input')
 const $twitterContainer = document.querySelector('.twitter-container')
 
+//Changes screen view
 class HashRouter {
   constructor($views) {
     this.isListening = false
@@ -26,6 +28,7 @@ class HashRouter {
 
 const router = new HashRouter($views)
 
+//Creates a string to fetch
 function searchParser(item) {
   const searchString = item.value
 
@@ -38,53 +41,51 @@ function searchParser(item) {
   return sendString
 }
 
+//Creates elements
+function createElement(tagName, attributes) {
+  const $element = document.createElement(tagName)
+
+  for (const property in attributes) {
+    $element.setAttribute(property, attributes[property])
+  }
+  return $element
+}
+
+//Creates tweets
 function renderTwitterElements(response) {
   const $tweetList = document.createElement('ul')
 
   response.forEach(element => {
-    const $tweetLi = document.createElement('li')
-    const $mediaImg = document.createElement('div')
-    const $img = document.createElement('img')
-    const $name = document.createElement('h5')
-    const $text = document.createElement('p')
-    const $mediaBody = document.createElement('div')
-    const $sentiment = document.createElement('div')
+    const $tweetLi = createElement('li', { class: 'media' })
+    const $mediaImg = createElement('div', { class: 'media-left' })
+    const $img = createElement('img', { class: 'media-object' })
+    const $name = createElement('h5', { class: 'media-heading' })
+    const $text = createElement('p')
+    const $mediaBody = createElement('div', { class: 'media-body' })
+    let $sentiment
 
     if (element.userSentiment === 'positive') {
-      $sentiment.classList.add('glyphicon')
-      $sentiment.classList.add('glyphicon-triangle-top')
-      $sentiment.classList.add('pull-right')
-      positive++
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-triangle-top pull-right' })
+      sentimentCount(element)
     }
     else if(element.userSentiment === 'negative') {
-      $sentiment.classList.add('glyphicon')
-      $sentiment.classList.add('glyphicon-triangle-bottom')
-      $sentiment.classList.add('pull-right')
-      negative++
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-triangle-bottom pull-right' })
+      sentimentCount(element)
     }
     else {
-      $sentiment.classList.add('glyphicon')
-      $sentiment.classList.add('glyphicon-stop')
-      $sentiment.classList.add('pull-right')
-      neutral++
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-stop pull-right' })
+      sentimentCount(element)
     }
 
     for (const property in element) {
       if (property === 'text') {
         $text.textContent =  element[property]
       }
-
-      if (property === 'user') {
+      else if (property === 'user') {
         $name.textContent = element[property].name
         $img.src = element[property].profile_image_url
       }
     }
-
-    $tweetLi.classList.add('media')
-    $name.classList.add('media-heading')
-    $img.classList.add('media-object')
-    $mediaImg.classList.add('media-left')
-    $mediaBody.classList.add('media-body')
 
     $mediaImg.appendChild($img)
     $mediaBody.appendChild($sentiment)

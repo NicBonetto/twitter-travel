@@ -64,6 +64,8 @@ function initAutocomplete() {
     })
     map.fitBounds(bounds)
   })
+
+  //Fetches tweets and creates chart on event
   searchBox.addListener('places_changed', () => {
     const fetchItem = searchParser($searchItem)
     $twitterContainer.innerHTML = ''

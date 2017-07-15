@@ -1,7 +1,9 @@
+//Declare variables
 let positive = 0
 let negative = 0
 let neutral = 0
 
+//Creates a new chart every call
 function createChart(...data) {
   const $chart = document.querySelector('#chart')
   $chart.innerHTML = ''
@@ -40,4 +42,16 @@ function createChart(...data) {
   positive = 0
   negative = 0
   neutral = 0
+}
+
+function sentimentCount(tweet) {
+  if (tweet.userSentiment === 'positive') {
+    positive++
+  }
+  else if(tweet.userSentiment === 'negative') {
+    negative++
+  }
+  else {
+    neutral++
+  }
 }

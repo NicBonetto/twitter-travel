@@ -1,3 +1,4 @@
+//Declare variables
 require('dotenv').config({ path: './../.env' })
 const express = require('express')
 const app = express()
@@ -10,11 +11,14 @@ const twitter = new twit({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET,
 })
 
+//Use public files
 app.use(express.static(__dirname + './../public'))
 
+//Get tweets
 app.get('/tweets/:location', (req, res) => {
   twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
     if (err) console.log(err)
+    //Add sentiment property
     data.statuses.forEach((element, index) => {
       const twitterSentiment = sentiment(element.text)
 

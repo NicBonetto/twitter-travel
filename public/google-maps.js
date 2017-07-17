@@ -25,13 +25,11 @@ function initAutocomplete() {
       return
     }
 
-    // Clear out the old markers.
     markers.forEach(function(marker) {
       marker.setMap(null)
     })
     markers = []
 
-    // For each place, get the icon, name and location.
     const bounds = new google.maps.LatLngBounds()
     places.forEach(function(place) {
       if (!place.geometry) {
@@ -47,7 +45,6 @@ function initAutocomplete() {
         scaledSize: new google.maps.Size(25, 25)
       }
 
-      // Create a marker for each place.
       markers.push(new google.maps.Marker({
         map: map,
         icon: icon,
@@ -65,7 +62,6 @@ function initAutocomplete() {
     map.fitBounds(bounds)
   })
 
-  //Fetches tweets and creates chart on event
   searchBox.addListener('places_changed', () => {
     const fetchItem = searchParser($searchItem)
     $twitterContainer.innerHTML = ''
@@ -77,8 +73,12 @@ function initAutocomplete() {
       .then(data => {
         $twitterContainer.appendChild(renderTwitterElements(data.statuses))
       })
-      .then( () => {
-        createChart(positive, negative, neutral)
+      .then(() => {
+        const newChart = createChart(positive, negative, neutral)
+        const $chart = document.querySelector('#chart')
+        $chart.innerHTML = ''
+
+        const sentimentChart = new Chart($chart, newChart)
       })
 
   })

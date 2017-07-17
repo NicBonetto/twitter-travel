@@ -1,9 +1,7 @@
-//Declare variables
 const $views = document.querySelectorAll('.view')
 const $searchItem = document.querySelector('#pac-input')
 const $twitterContainer = document.querySelector('.twitter-container')
 
-//Changes screen view
 class HashRouter {
   constructor($views) {
     this.isListening = false
@@ -28,7 +26,6 @@ class HashRouter {
 
 const router = new HashRouter($views)
 
-//Creates a string to fetch
 function searchParser(item) {
   const searchString = item.value
 
@@ -41,7 +38,6 @@ function searchParser(item) {
   return sendString
 }
 
-//Creates elements
 function createElement(tagName, attributes) {
   const $element = document.createElement(tagName)
 
@@ -51,7 +47,6 @@ function createElement(tagName, attributes) {
   return $element
 }
 
-//Creates tweets
 function renderTwitterElements(response) {
   const $tweetList = document.createElement('ul')
 

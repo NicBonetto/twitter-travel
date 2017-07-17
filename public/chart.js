@@ -1,13 +1,10 @@
-//Declare variables
 let positive = 0
 let negative = 0
 let neutral = 0
 
-//Creates a new chart every call
 function createChart(...data) {
-  const $chart = document.querySelector('#chart')
-  $chart.innerHTML = ''
-  const sentimentChart = new Chart ($chart, {
+
+  const newChart = {
     type: 'bar',
     data: {
       labels: [
@@ -38,10 +35,13 @@ function createChart(...data) {
         }
       }]
     }
-  })
+  }
+  
   positive = 0
   negative = 0
   neutral = 0
+
+  return newChart
 }
 
 function sentimentCount(tweet) {

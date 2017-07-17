@@ -38,16 +38,39 @@ function searchParser(item) {
   return sendString
 }
 
+function createElement(tagName, attributes) {
+  const $element = document.createElement(tagName)
+
+  for (const property in attributes) {
+    $element.setAttribute(property, attributes[property])
+  }
+  return $element
+}
+
 function renderTwitterElements(response) {
   const $tweetList = document.createElement('ul')
 
   response.forEach(element => {
-    const $tweetLi = document.createElement('li')
-    const $mediaImg = document.createElement('div')
-    const $img = document.createElement('img')
-    const $name = document.createElement('h5')
-    const $text = document.createElement('p')
-    const $mediaBody = document.createElement('div')
+    const $tweetLi = createElement('li', { class: 'media' })
+    const $mediaImg = createElement('div', { class: 'media-left' })
+    const $img = createElement('img', { class: 'media-object' })
+    const $name = createElement('h5', { class: 'media-heading' })
+    const $text = createElement('p')
+    const $mediaBody = createElement('div', { class: 'media-body' })
+    let $sentiment
+
+    if (element.userSentiment === 'positive') {
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-triangle-top pull-right' })
+      sentimentCount(element)
+    }
+    else if(element.userSentiment === 'negative') {
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-triangle-bottom pull-right' })
+      sentimentCount(element)
+    }
+    else {
+      $sentiment = createElement('div', { class: 'glyphicon glyphicon-stop pull-right' })
+      sentimentCount(element)
+    }
 
     for (const property in element) {
       if (property === 'text') {
@@ -59,13 +82,8 @@ function renderTwitterElements(response) {
       }
     }
 
-    $tweetLi.classList.add('media')
-    $name.classList.add('media-heading')
-    $img.classList.add('media-object')
-    $mediaImg.classList.add('media-left')
-    $mediaBody.classList.add('media-body')
-
     $mediaImg.appendChild($img)
+    $mediaBody.appendChild($sentiment)
     $mediaBody.appendChild($name)
     $mediaBody.appendChild($text)
     $tweetLi.appendChild($mediaImg)

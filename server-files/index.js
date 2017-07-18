@@ -36,4 +36,9 @@ app.get('/tweets/:location', (req, res) => {
     })
 })
 
+app.get('/database', (req, res) => {
+  knexFunc.retrieveTable()
+    .then(response => res.json(response))
+})
+
 app.listen(process.env.PORTAL)

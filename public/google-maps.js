@@ -80,5 +80,8 @@ function initAutocomplete() {
 
         const sentimentChart = new Chart($chart, newChart)
       })
+
+    fetch('/database')
+      .then(res => { return res.json() })
   })
 }

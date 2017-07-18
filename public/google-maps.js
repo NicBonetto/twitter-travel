@@ -80,6 +80,5 @@ function initAutocomplete() {
 
         const sentimentChart = new Chart($chart, newChart)
       })
-
   })
 }

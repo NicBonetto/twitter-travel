@@ -14,5 +14,11 @@ module.exports = {
         search_count: knex.raw('search_count + 1')
       })
       return query
+  },
+
+  retrieveTable: () => {
+    const query = knex
+      .select('location_name', 'image', 'search_count').from('twittertravel')
+      return query
   }
 }

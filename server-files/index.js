@@ -15,23 +15,25 @@ app.use(express.static(__dirname + './../public'))
 
 app.get('/tweets/:location', (req, res) => {
   knexFunc.incrementCount(req.params.location)
-  twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
-    if (err) console.log(err)
-    data.statuses.forEach((element, index) => {
-      const twitterSentiment = sentiment(element.text)
+    .then(() => {
+      twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
+        if (err) console.log(err)
+        data.statuses.forEach((element, index) => {
+          const twitterSentiment = sentiment(element.text)
 
-      if (twitterSentiment.score > 0) {
-        element.userSentiment = 'positive'
-      }
-      else if (twitterSentiment.score < 0) {
-        element.userSentiment = 'negative'
-      }
-      else {
-        element.userSentiment = 'neutral'
-      }
+          if (twitterSentiment.score > 0) {
+            element.userSentiment = 'positive'
+          }
+          else if (twitterSentiment.score < 0) {
+            element.userSentiment = 'negative'
+          }
+          else {
+            element.userSentiment = 'neutral'
+          }
+        })
+        res.json(data)
+      })
     })
-    res.json(data)
-  })
 })
 
 app.listen(process.env.PORTAL)

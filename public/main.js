@@ -100,7 +100,6 @@ function createCarousel(data) {
 
   data.forEach((element, index) => {
     let $item
-    let $inner
     if (index === 0) {
       $item = createElement('div', { class: 'item active' })
     }
@@ -108,29 +107,7 @@ function createCarousel(data) {
       $item = createElement('div', { class: 'item' })
     }
 
-    switch (index) {
-      case 0: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'First slide' })
-        break
-      case 1: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Second slide' })
-        break
-      case 2: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Third slide' })
-        break
-      case 3: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Fourth slide' })
-        break
-      case 4: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Fifth slide' })
-        break
-      case 5: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Sixth slide' })
-        break
-      case 6: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Seventh slide' })
-        break
-      case 7: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Eighth slide' })
-        break
-      case 8: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Ninth slide' })
-        break
-      case 9: $inner = createElement('img', { class: 'carousel-image', src: element.image, alt: 'Tenth slide' })
-        break
-      default: console.log('Carousel Creation Error!')
-    }
+    const $inner = createElement('img', { class: 'carousel-image', src: element.image })
     const $caption = createElement('div', { class: 'carousel-caption' })
     const $text = createElement('h3', { class: 'font-style carousel-text' })
 

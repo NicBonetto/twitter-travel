@@ -83,5 +83,12 @@ function initAutocomplete() {
 
     fetch('/database')
       .then(res => { return res.json() })
+      .then(res => {
+        const $carouselContainer = document.querySelector('#carousel')
+        $carouselContainer.innerHTML = ''
+        const carousel = createCarousel(res)
+        $carouselContainer.appendChild(carousel)
+        $('.carousel').carousel()
+      })
   })
 }

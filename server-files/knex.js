@@ -19,7 +19,11 @@ module.exports = {
 
   retrieveTable: () => {
     const query = knex
-      .select('location_name', 'image', 'search_count').from('twittertravel')
+      .table('twittertravel')
+      .select('location_name', 'image')
+      .orderBy('search_count', 'desc')
+      .limit(10)
+
 
     return query
   }

@@ -17,7 +17,7 @@ module.exports = {
      return query
   },
 
-  retrieveTable: () => {
+  retrieveLocations: () => {
     const query = knex
       .table('twittertravel')
       .select('location_name', 'image')

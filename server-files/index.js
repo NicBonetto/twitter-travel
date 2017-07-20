@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const twit = require('twit')
 const sentiment = require('sentiment')
-const knexFunc = require('./knex.js')
+const knex = require('./knex.js')
 const twitter = new twit({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
@@ -14,7 +14,7 @@ const twitter = new twit({
 app.use(express.static(__dirname + './../public'))
 
 app.get('/tweets/:location', (req, res) => {
-  knexFunc.incrementCount(req.params.location)
+  knex.incrementCount(req.params.location)
     .then(() => {
       twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
         if (err) console.log(err)
@@ -36,8 +36,8 @@ app.get('/tweets/:location', (req, res) => {
     })
 })
 
-app.get('/database', (req, res) => {
-  knexFunc.retrieveTable()
+app.get('/locations', (req, res) => {
+  knex.retrieveLocations()
     .then(response => res.json(response))
 })
 

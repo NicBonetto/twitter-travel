@@ -81,7 +81,7 @@ function initAutocomplete() {
         const sentimentChart = new Chart($chart, newChart)
       })
 
-    fetch('/database')
+    fetch('/locations')
       .then(res => { return res.json() })
       .then(res => {
         const $carouselContainer = document.querySelector('#carousel')

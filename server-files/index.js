@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const twit = require('twit')
 const sentiment = require('sentiment')
+const knex = require('./knex.js')
 const twitter = new twit({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
@@ -13,23 +14,31 @@ const twitter = new twit({
 app.use(express.static(__dirname + './../public'))
 
 app.get('/tweets/:location', (req, res) => {
-  twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
-    if (err) console.log(err)
-    data.statuses.forEach((element, index) => {
-      const twitterSentiment = sentiment(element.text)
+  knex.incrementCount(req.params.location)
+    .then(() => {
+      twitter.get('search/tweets', { q: req.params.location, result_type: 'recent', lang: 'en', count: 50 }, (err, data, response) => {
+        if (err) console.log(err)
+        data.statuses.forEach((element, index) => {
+          const twitterSentiment = sentiment(element.text)
 
-      if (twitterSentiment.score > 0) {
-        element.userSentiment = 'positive'
-      }
-      else if (twitterSentiment.score < 0) {
-        element.userSentiment = 'negative'
-      }
-      else {
-        element.userSentiment = 'neutral'
-      }
+          if (twitterSentiment.score > 0) {
+            element.userSentiment = 'positive'
+          }
+          else if (twitterSentiment.score < 0) {
+            element.userSentiment = 'negative'
+          }
+          else {
+            element.userSentiment = 'neutral'
+          }
+        })
+        res.json(data)
+      })
     })
-    res.json(data)
-  })
 })
 
-app.listen(3000)
+app.get('/database/locations', (req, res) => {
+  knex.retrieveLocations()
+    .then(response => res.json(response))
+})
+
+app.listen(process.env.PORTAL)

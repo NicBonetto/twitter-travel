@@ -94,4 +94,32 @@ function renderTwitterElements(response) {
   return $tweetList
 }
 
+function createCarousel(data) {
+  const $carouselContainer = createElement('div', { class: 'carousel slide', 'data-ride': 'carousel' })
+  const $carousel = createElement('div', { class: 'carousel-inner text-center', role: 'listbox'})
+
+  data.forEach((element, index) => {
+    let $item
+    if (index === 0) {
+      $item = createElement('div', { class: 'item active' })
+    }
+    else {
+      $item = createElement('div', { class: 'item' })
+    }
+
+    const $inner = createElement('img', { class: 'carousel-image', src: element.image })
+    const $caption = createElement('div', { class: 'carousel-caption' })
+    const $text = createElement('h3', { class: 'font-style carousel-text' })
+
+    $text.textContent = element.location_name
+
+    $item.appendChild($inner)
+    $caption.appendChild($text)
+    $item.appendChild($caption)
+    $carousel.appendChild($item)
+  })
+  $carouselContainer.appendChild($carousel)
+  return $carouselContainer
+}
+
 router.listen()

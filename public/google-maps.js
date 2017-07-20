@@ -81,5 +81,14 @@ function initAutocomplete() {
         const sentimentChart = new Chart($chart, newChart)
       })
 
+    fetch('/database/locations')
+      .then(res => { return res.json() })
+      .then(res => {
+        const $carouselContainer = document.querySelector('#carousel')
+        $carouselContainer.innerHTML = ''
+        const carousel = createCarousel(res)
+        $carouselContainer.appendChild(carousel)
+        $('.carousel').carousel()
+      })
   })
 }

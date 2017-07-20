@@ -36,7 +36,7 @@ function createChart(...data) {
       }]
     }
   }
-  
+
   positive = 0
   negative = 0
   neutral = 0

@@ -39,12 +39,12 @@
   margin-left: 10%;
 }
 
-.about-nav {
+.navs {
   margin-left: 15px;
   display: inline-block;
 }
 
-.about {
+.nav-format {
   display: inline-block;
   padding-top: 14px;
   font-family: 'Open Sans', sans-serif;
@@ -190,4 +190,61 @@
   height: 45vh;
   margin-top: 2%;
   background-color: rgba(226, 226, 227, 1);
+}
+
+#popular-page {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#popular-page::before {
+  content: '';
+  display: block;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2f/Night_shot_of_Golden_Gate_Bridge_and_San_Francisco.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.popular-header {
+  color: rgba(226, 226, 227, 0.9);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+#carousel {
+  margin-left: 21%;
+  width: 50%;
+  padding: 10px;
+}
+
+.carousel,
+.item {
+  height: 350px;
+}
+
+.carousel-inner {
+  width: 750px;
+  height: 350px;
+}
+
+.carousel-image,
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 750px;
+  max-width: 750px;
+  min-height: 350px;
+  max-height: 350px;
+}
+
+.carousel-text {
+  margin-top: 5%;
 }

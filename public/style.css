@@ -218,17 +218,33 @@
   font-weight: bold;
 }
 
-.item {
-  margin: auto;
+#carousel {
+  margin-left: 21%;
   width: 50%;
   padding: 10px;
 }
 
-.carousel-image {
-  width: 700px;
-  height: 250px;
+.carousel,
+.item {
+  height: 350px;
+}
+
+.carousel-inner {
+  width: 750px;
+  height: 350px;
+}
+
+.carousel-image,
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 750px;
+  max-width: 750px;
+  min-height: 350px;
+  max-height: 350px;
 }
 
 .carousel-text {
-  margin-top: 2%;
+  margin-top: 5%;
 }

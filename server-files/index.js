@@ -36,7 +36,7 @@ app.get('/tweets/:location', (req, res) => {
     })
 })
 
-app.get('/locations', (req, res) => {
+app.get('/database/locations', (req, res) => {
   knex.retrieveLocations()
     .then(response => res.json(response))
 })

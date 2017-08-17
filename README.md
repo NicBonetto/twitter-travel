@@ -3,6 +3,8 @@ A website for adventurers who want to travel using Twitter's recommendations.
 
 *Note: there is a daily limit on Twitter API requests.*
 
+![](https://user-images.githubusercontent.com/28014739/29391755-405f808e-82ae-11e7-9934-e7591a9979d1.gif)
+
 # Getting Started
 
 This application uses Git and Node, so make sure they are downloaded. You must also set up environmental variables (Twitter API keys, PORT, and DATABASE_URL). Then follow these prompts:

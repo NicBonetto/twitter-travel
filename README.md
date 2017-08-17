@@ -1,9 +1,11 @@
 # twitter-travel
 A website for adventurers who want to travel using Twitter's recommendations.
 
+*Note: there is a daily limit on Twitter API requests.*
+
 # Getting Started
 
-This application uses Git and Node, so make sure they are downloaded. Then follow these prompts:
+This application uses Git and Node, so make sure they are downloaded. You must also set up environmental variables (Twitter API keys, PORT, and DATABASE_URL). Then follow these prompts:
 
 ```
 $ git clone https://github.com/NicBonetto/twitter-travel.git

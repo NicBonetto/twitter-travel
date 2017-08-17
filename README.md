@@ -11,7 +11,8 @@ This application uses Git and Node, so make sure they are downloaded. You must a
 $ git clone https://github.com/NicBonetto/twitter-travel.git
 $ cd twitter-travel
 $ npm install
-$ node server-files/index.js
+$ cd server-files
+$ node index.js
 ```
 Go to your browser and search localhost:3000
 
